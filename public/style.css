@@ -1,0 +1,77 @@
+/* font-family: 'Oswald', sans-serif;
+font-family: 'Open Sans', sans-serif; */
+
+h1 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 50px;
+    text-align: center;
+    background-color: #466f4d;
+    margin: 0;
+    padding: 15px;
+}
+
+h2 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 30px;
+}
+
+p,input,option, select {
+    font-family: 'Open Sans', sans-serif;    
+    font-size: 20px;
+}
+
+.container-fluid{
+    background-image: url("./img/weights.jpg");
+    background-size: cover;
+    height: 100vh;
+    padding-top: 35px;
+}
+#specific-workout {
+    width: 400px;
+    margin: 20px;
+    background-color: rgb(179, 166, 111, .8);
+    padding: 40px;
+    border-radius: 1.5em;
+    border: 2px solid black;
+    height: 450px, auto;
+
+}
+
+#newWorkForm, #newExerForm {
+    width: 400px;
+    height: 450px;
+    margin: 20px;
+    background-color: rgb(179, 166, 111, .8);
+    padding: 40px;
+    border-radius: 1.5em;
+    border: 2px solid black;
+}
+
+#submit-workout, #submit-exercise {
+    width: 150px;
+    background-color: #466f4d;
+    border-radius: 1.5em;
+    border: 1px solid black;
+    margin-top: 10px;
+    font-family: 'Oswald', sans-serif;
+    font-size: 20px;
+
+}
+
+input {
+    padding: 5px;
+    border: none;
+    margin-top: 10px;
+}
+
+/* media queries */
+
+@media (max-width:1337px) and (min-width:0px) {
+    .container-fluid{
+        background-image: url("./img/weights.jpg");
+        background-size: cover;
+        height: auto;
+        padding-top: 35px;
+    }
+    
+}
