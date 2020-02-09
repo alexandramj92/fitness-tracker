@@ -12,9 +12,7 @@ function getWorkouts(err) {
         type: "GET",
         dataType: 'json',
         success: function(response) {
-            console.log(response[0]._id);
             allWorkoutsDropdown(response); 
-            // setTimeout(refresh,2000);
         }
     })
     if (err) console.log(err);
@@ -25,13 +23,10 @@ function getSpecWork(err) {
         type: "GET",
         dataType: 'json',
         success: function(response) {
-            // console.log("yay worked", response[0]._id.toString());
             for (let i = 0; i<response.length; i++){
                 if(response[i]._id.toString() == selection) {
-                    console.log("matching", response[i]);
                     let specWork = response[i];
                     displaySpecWork(specWork);
-                    // return response[i];
                 }
 
             }
@@ -88,7 +83,6 @@ function allWorkoutsDropdown(allWorkouts) {
 const getWorkoutId = document.getElementById('workout-dropdown');
 getWorkoutId.onchange = function() {
     selection = document.getElementById('workout-dropdown').value;
-    console.log("selection", selection);
     $.ajax("/getWorkoutID", {
         type: "POST",
         dataType: 'json',
@@ -102,7 +96,6 @@ getWorkoutId.onchange = function() {
 $("#newExerForm").submit(function(e) {
 
     e.preventDefault(); // avoid to execute the actual submit of the form.
-    console.log("submit exer fom clicked");
 
     var form = $(this);
     var url = form.attr('action');
@@ -113,7 +106,6 @@ $("#newExerForm").submit(function(e) {
            data: form.serialize(), // serializes the form's elements.
            success: function(data)
            {
-               console.log(data); 
            },
            complete: function(data) {
                getSpecWork();
@@ -126,7 +118,6 @@ $("#newExerForm").submit(function(e) {
 $("#newWorkForm").submit(function(e) {
 
     e.preventDefault(); // avoid to execute the actual submit of the form.
-    console.log("work form clicked");
 
     var form = $(this);
     var url = form.attr('action');
@@ -137,7 +128,6 @@ $("#newWorkForm").submit(function(e) {
            data: form.serialize(), // serializes the form's elements.
            success: function(data)
            {
-               console.log(data); 
            },
            complete: function(data) {
                getWorkouts();

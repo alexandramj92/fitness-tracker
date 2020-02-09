@@ -21,12 +21,7 @@ app.use(express.static("public"));
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/populatedb", { useNewUrlParser: true });
 
 db.Workout.create({ title: "Workout Test" })
-//   .then(dbWorkout => {
-//     console.log(dbWorkout);
-//  })
-//   .catch(({ message }) => {
-//     console.log(message);
-//   }); 
+
 
 app.post("/submitWorkout", ({body}, res) => {
     db.Workout.create(body)
@@ -38,15 +33,7 @@ app.post("/submitWorkout", ({body}, res) => {
     });
 })
 
-// app.get("/exercises", (req, res) => {
-//   db.Exercise.find({})
-//     .then(dbExercise => {
-//       console.log(res.json(dbExercise));
-//     })
-//     .catch(err => {
-//       res.json(err);
-//     });
-// });
+
 
 app.get("/workouts", (req, res) => {
   db.Workout.find({})
@@ -72,9 +59,7 @@ app.post("/submitExercise", ({ body }, res) => {
 
 
 app.post("/getWorkoutID", function(req,res) {
-    // console.log(req.body.selection);
     workoutID = req.body.selection;
-    console.log(workoutID);
 })
 
 
