@@ -3,7 +3,7 @@
 ## Description
 
 This application allows the user to create different workouts. 
-The live application can be accessed [here.](https://agile-coast-94423.herokuapp.com/)
+The live application can be accessed [here.](https://dry-hamlet-12667.herokuapp.com/)
 
 ## Usage
 
