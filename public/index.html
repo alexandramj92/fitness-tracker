@@ -16,7 +16,8 @@
 
 
 <div class = "row justify-content-center">
-<form action = "/submitWorkout" method="post" id ="newWorkForm">
+  <!-- action = "/submitWorkout" method="post" -->
+<form  id ="newWorkForm">
 <div class="form-group" >
     <h2>Create new workout</h2>
     <input id="new-workout" type="text" name="title" placeholder="New Workout">
@@ -25,12 +26,12 @@
 </form>
    
       
-      
-<form action="/submitExercise" method="post" id="newExerForm">
+<!-- action="/submitExercise" method="post"     -->
+<form  id="newExerForm">
 
     <div class="form-group">
 
-    <h2>Choose workout you would like to add to.</h2>
+    <h2>Choose workout you would like to add to or view.</h2>
 
     <select id="workout-dropdown" placeholder="Choose Workout">
         <option value="test">Test</option>
@@ -42,12 +43,21 @@
 
       <input type="submit"> -->
       <select id="exercises" name="exercise">
-        <option value="running">Running</option>
-        <option value="bicep curls">Bicep Curls</option>
-        <option value="plank">Plank</option>
-        <option value="jumping jacks">Jumping Jacks</option>
+        <option value="Running">Running</option>
+        <option value="Bicep Curls">Bicep Curls</option>
+        <option value="Plank">Plank</option>
+        <option value="Jumping Jacks">Jumping Jacks</option>
+        <option value="Stretching">Stretching</option>
+        <option value="Squats">Squats</option>
+        <option value="Lunges">Lunges</option>
+        <option value="Kettle Bell Swings">Kettle Bell Swings</option>
+        <option value="Mountain Climbers">Mountain Climbers</option>
+        <option value="Shoulder Presses">Shoulder Presses</option>
+        <option value="Tricep Dips">Tricep Dips</option>
+        <option value="Bicycle Crunches">Bicycle Crunches</option>
+
       </select>
-      <input type="number" name="minutes" placeholder="minutes"> min </input>
+      <input type="number" name="minutes" placeholder="minutes"> </input>
 
     </br>
     <button type="submit" id="submit-exercise">Add Exercise</button>

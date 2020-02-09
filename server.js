@@ -23,16 +23,16 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/populatedb", { 
 db.Workout.create({ title: "Workout Test" })
 //   .then(dbWorkout => {
 //     console.log(dbWorkout);
-//   })
+//  })
 //   .catch(({ message }) => {
 //     console.log(message);
-//   });
+//   }); 
 
 app.post("/submitWorkout", ({body}, res) => {
     db.Workout.create(body)
     .then(dbWorkout => {
-        console.log(dbWorkout.title);
-    })
+      res.json(dbWorkout);    
+})
     .catch(({message}) => {
         console.log(message);
     });
@@ -63,7 +63,6 @@ app.post("/submitExercise", ({ body }, res) => {
     .then(({ _id }) => db.Workout.findOneAndUpdate({"_id" : `${workoutID}`}, { $push: { exercises: _id } }, { new: true }))
     .then(dbWorkout => {
     res.json(dbWorkout);
-    res.end();
     })
     .catch(err => {
       res.json(err);

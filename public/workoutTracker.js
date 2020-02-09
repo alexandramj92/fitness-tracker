@@ -4,6 +4,7 @@ let selection;
 
 function init() {
     getWorkouts();
+    getSpecWork();
 }
 
 function getWorkouts(err) {
@@ -48,18 +49,22 @@ function displaySpecWork (specWork) {
     hTwo.append(workoutTitle);
     const specWorkDiv = document.getElementById('specific-workout');
     specWorkDiv.appendChild(hTwo);
+    selection = specWork._id.toString();
 
     for (let i = 0; i<specWork.exercises.length; i++){
         let exercise = document.createTextNode(specWork.exercises[i].exercise);
         let pOne = document.createElement("p");
+        pOne.setAttribute("class", "exercise");
         pOne.append(exercise);
 
         let minutes = document.createTextNode(specWork.exercises[i].minutes + " min");
         let pTwo = document.createElement("p");
+        pTwo.setAttribute("class", "minutes");
         pTwo.append(minutes);
 
+        pOne.appendChild(pTwo);
+
         specWorkDiv.appendChild(pOne);
-        specWorkDiv.appendChild(pTwo);
 
 
     } 
@@ -94,14 +99,61 @@ getWorkoutId.onchange = function() {
 
 }
 
-$("#submit-exercise").click(function(){
-    console.log("exercise submitted");
-    getSpecWork();
-  });
+$("#newExerForm").submit(function(e) {
 
-$('#submit-workout').click(function() {
-    getWorkouts();
-})
+    e.preventDefault(); // avoid to execute the actual submit of the form.
+    console.log("submit exer fom clicked");
+
+    var form = $(this);
+    var url = form.attr('action');
+
+    $.ajax("/submitExercise", {
+           type: "POST",
+           url: url,
+           data: form.serialize(), // serializes the form's elements.
+           success: function(data)
+           {
+               console.log(data); 
+           },
+           complete: function(data) {
+               getSpecWork();
+           }
+         });
+
+
+});
+
+$("#newWorkForm").submit(function(e) {
+
+    e.preventDefault(); // avoid to execute the actual submit of the form.
+    console.log("work form clicked");
+
+    var form = $(this);
+    var url = form.attr('action');
+
+    $.ajax("/submitWorkout", {
+           type: "POST",
+           url: url,
+           data: form.serialize(), // serializes the form's elements.
+           success: function(data)
+           {
+               console.log(data); 
+           },
+           complete: function(data) {
+               getWorkouts();
+               reloadPage();
+           }
+         });
+
+
+});
+
+function reloadPage() {
+    location.reload();
+    
+
+}
+
 
 
 
