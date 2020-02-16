@@ -14,71 +14,17 @@
     <link rel="apple-touch-icon" href="/imag/icons/icon-152x152.png">
     <meta name="description" content="A fitness tracker app">
     <meta name="theme-color" content="#2F3BA2" />
-    <script src="./install.js"></script>
+
+
+
   </head>
 
   <body>
 <h1>Workout Tracker</h1>
 
-<div class="container-fluid">
+<div><p>You are offline!</p></div>
 
-
-<div class = "row justify-content-center">
-<form  id ="newWorkForm">
-<div class="form-group" >
-    <h2>Create new workout</h2>
-    <input id="new-workout" type="text" name="title" placeholder="New Workout">
-    <button id="submit-workout"  type="submit">Add Workout</button>
-</div>
-</form>
    
-      
-<form  id="newExerForm">
-
-    <div class="form-group">
-
-    <h2>Choose workout you would like to add to or view.</h2>
-
-    <select id="workout-dropdown" placeholder="Choose Workout">
-        <option value="test">Test</option>
-      </select>
-    
-    <h2>Choose an exercise you would like to add to your workout.</h2>
-     
-      <select id="exercises" name="exercise">
-        <option value="Running">Running</option>
-        <option value="Bicep Curls">Bicep Curls</option>
-        <option value="Plank">Plank</option>
-        <option value="Jumping Jacks">Jumping Jacks</option>
-        <option value="Stretching">Stretching</option>
-        <option value="Squats">Squats</option>
-        <option value="Lunges">Lunges</option>
-        <option value="Kettle Bell Swings">Kettle Bell Swings</option>
-        <option value="Mountain Climbers">Mountain Climbers</option>
-        <option value="Shoulder Presses">Shoulder Presses</option>
-        <option value="Tricep Dips">Tricep Dips</option>
-        <option value="Bicycle Crunches">Bicycle Crunches</option>
-
-      </select>
-      <input type="number" name="minutes" placeholder="minutes"> </input>
-
-    </br>
-    <button type="submit" id="submit-exercise">Add Exercise</button>
-
-    </div>
-
-    </form>
-
-
-
-    <div id="specific-workout">
-        <h2>Workout</h2>
-
-    </div>
-
-</div>
-
-</div>
 
     <script src="https://code.jquery.com/jquery.js"></script>
     <script src="workoutTracker.js"></script>
